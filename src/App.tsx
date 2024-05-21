@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { mockArrayData } from "./constants"
+import { mockArrayData } from "./shared/constants"
 import './App.css'
 import Bar from "./components/Bar"
 import { createShuffledArray } from './shared/utlis'

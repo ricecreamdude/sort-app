@@ -1,34 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from "react"
+import { mockArrayData } from "./constants"
 import './App.css'
 
+/**
+ * Requirements
+ *  
+ *  1. 100 bar graph of values, with display. Only displayed on desktop view.
+ *  2. Quick sort algorithm that organizes the bar graph, ascending
+ *  
+ * 
+ */
+
+
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [ barGraphData, setBarGraphData] = useState(mockArrayData)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <div className="header">Sort Algorithms</div>
+      <div className="bar-chart">
+        {barGraphData.map( height => <Bar height={height} key={height}/> )}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <footer></footer>
+    </div>
+  )
+}
+
+const Bar = ({height}: {height: number}) => {
+
+  return (
+    <div 
+    style={{
+      height: `${2 * height}px`,
+      width: '5px',
+      marginRight: '1px',
+      backgroundColor: "gray",
+    }}
+    className="bar"
+    />
   )
 }
 

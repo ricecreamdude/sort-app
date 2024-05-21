@@ -32,13 +32,6 @@ body{
     align-items: flex-end;
 }
 
-.bar {
-
-    width: '5px',
-    marginRight: '1px',
-    backgroundColor: "red",
-}
-
 .bar-chart-anchor{
     display: flex;
     align-items: flex-end;

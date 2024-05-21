@@ -5,9 +5,9 @@
  * 
  * @param count 
  */
-export function createShuffledArray(count=200): number[]{
+export function createShuffledArray(count=50): any[]{
 
-    let res: number[] = []
+    let res: any[] = []
     let nums: number[] = [];
 
     for (let i = 1; i < count + 1; i++){
@@ -18,11 +18,8 @@ export function createShuffledArray(count=200): number[]{
 
         let randomIndex = Math.floor(Math.random() * nums.length);
 
-        res.push(nums[randomIndex])
+        res.push({height: nums[randomIndex], selected: false})
         nums.splice(randomIndex, 1);
-
-        console.log(nums)
-
     }
 
     return res;
